@@ -18,7 +18,7 @@ const Swiperslidecollection = ({ products }: { products: Product[] }) => {
       }}
         pagination={{ clickable: true }}
         spaceBetween={20}
-        slidesPerView={6}>
+        slidesPerView={4}>
             {products.map((product)=> (
                 <SwiperSlide key={product.handle}>
                 {/* <Link className="relative block h-full w-full" */}

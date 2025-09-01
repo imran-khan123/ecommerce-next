@@ -12,6 +12,53 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+  body {
+    @apply bg-white text-black; /* Light mode */
+  }
+
+
+@layer components {
+  .swiper-pagination-bullet {
+     width: 10px !important;
+    height: 10px !important;
+      background-color: transparent !important; /* ✅ write CSS directly */
+      border: 1px solid #000;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: black !important; /* ✅ write CSS directly */
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  
+
+.swiper-slider .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+  padding-bottom: 40px !important;
+}
+
+.swiper-slider .custom-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: absolute;
+  z-index: 3;
+  left: 50% !important;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 10px !important;
+    color: #000 !important;
+}
+
+.swiper-button-prev{
+      position: absolute;
+    left: 45%;
+    top:23px;
+}
+.swiper-button-next{
+position: absolute;
+    right: 47%;
+    top: 21px !important;
+}
+}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -30,3 +77,5 @@ input,
 button {
   @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
 }
+
+
