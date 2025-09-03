@@ -50,17 +50,17 @@
 
 .swiper-button-prev{
       position: absolute;
-    left: 45%;
-    top:23px;
+    left: 47% !important;
+    top:23px !important;
 }
 .swiper-button-next{
 position: absolute;
-    right: 47%;
+    right: 45% !important;
     top: 21px !important;
 }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {s
   html {
     color-scheme: dark;
   }

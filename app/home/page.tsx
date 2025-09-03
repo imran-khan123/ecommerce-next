@@ -1,91 +1,16 @@
-// import Swiper from "swiper";
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import sliderone from '../../public/assets/images/slider-one.webp';
-import slidertwo from '../../public/assets/images/slider-two.webp';
-const Heropanel = () => {
+import Heropanel from "components/Heropanel";
+import Newcollection from "components/newcollection";
+
+
+export default function HomePage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
   return (
-    <div className="swiper-slider">
-      <Swiper
-        modules={[Pagination, Navigation]}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-      pagination={{
-          el: ".custom-pagination", // 👈 tell Swiper to use your custom div
-          clickable: true,
-        }}
-        spaceBetween={20}
-        slidesPerView={1}
-      >
-        <SwiperSlide>
-          <div className="swiper-slider-image">
-            <div className="slider-inner-content relative">
-               <Image
-                src={sliderone}
-                alt="sliderimage"
-                className="w-full"
-               
-               />
-                 <Link href={""} className=" absolute bottom-16 left-1/2 -translate-x-1/2 bg-[rgb(159,192,235)] text-white  px-15 py-3 rounded-full ">
-               New Arrivals
-               
-               </Link>
-
-               
-            </div>
-         
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-slider-image">
-            <div className="slider-inner-content">
-               <Image
-                src={slidertwo}
-                alt="sliderimage"
-                className="w-full"
-               
-               />
-
-                 <Link href={""} className=" absolute bottom-16 left-1/2 -translate-x-1/2 text-white  px-10 py-3 rounded-full border border-white ">
-               New Shop
-               
-               </Link>
-               
-             
-
-               
-            </div>
-         
-          </div>
-        </SwiperSlide>
-
-        <div>
-
-        </div>
-        <div className="custom-pagination"></div>
-        <div className="navigation">
-
-          <div className="swiper-button-next">
-
-          </div>
-
-           <div className="swiper-button-prev">
-
-          </div>
-
-
-        </div>
-      </Swiper>
+    <div>
+      <Heropanel />
+      <Newcollection params={{ collection: "new-in" }} searchParams={searchParams} />
     </div>
   );
-};
-
-export default Heropanel;
+}
